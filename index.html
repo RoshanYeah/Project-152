@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js" ></script>
+
+    <script src="Car.js" ></script>
+    <script src="Base.js" ></script>
+
+  </head>
+  <body>
+
+    <a-scene background="color:#ffffff" >
+
+      <a-entity id="camera" >
+        <a-camera position="5 2 10" ></a-camera>
+      </a-entity>
+      
+
+      <!--Getting the car-->
+      <a-assets>
+        <a-assets-item id="car" src="./ford_mustang_shelby_gt500/scene.gltf" ></a-assets-item>
+      </a-assets>
+      <a-entity carBlue gltf-model="#car" scale="1 1 1" position="0 0 0" rotation="0 0 0" shadow="cast:true; receive:false"></a-entity>
+
+      <a-assets>
+        <a-assets-item id="car-spider" src="./mclaren_spider/scene.gltf" ></a-assets-item>
+      </a-assets>
+      <a-entity carRed id="carRed" gltf-model="#car-spider" scale="1.1 1.1 1.1" position="5 0 2.4" rotation="0 0 0" shadow="cast:true; receive:false"></a-entity>
+
+      <a-assets>
+        <a-assets-item id="car-audi" src="./ac_-_audi_r8_lms_2016/scene.gltf" ></a-assets-item>
+      </a-assets>
+      <a-entity carYellow gltf-model="#car-audi" scale="0.9 0.9 0.9" position="10 0 2.4" rotation="0 0 0" shadow="cast:true; receive:false"></a-entity>
+
+      <!--Cylinder-->
+      <a-entity base scale="0.015 0.015 0.015" position="0 0 2.25"></a-entity>
+      <a-entity base scale="0.015 0.015 0.015" position="5 0 2.25"></a-entity>
+      <a-entity base scale="0.015 0.015 0.015" position="10 0 2.25"></a-entity>
+
+      <!--Lights-->
+      <a-entity light="type:ambient;intensity:7"></a-entity>
+
+    </a-scene>
+
+  </body>
+
+</html>
